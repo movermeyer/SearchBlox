@@ -1,7 +1,7 @@
 SearchBlox Mediawiki Extension
 ==========
 
-A Mediawiki extension that queries a SearchBlox server when there < 10 matches for a query.
+A Mediawiki extension that queries a SearchBlox server when there are < 10 matches for a query.
 
 This extension is NOT official and is in no way affiliated or endorsed by SearchBlox. 
 See SearchBlox's site at http://searchblox.com.
