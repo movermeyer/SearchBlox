@@ -19,7 +19,7 @@ Modify LocalSettings.php and add the following lines at the bottom of the file:
 
     require_once( "$IP/extensions/SearchBlox/SearchBlox.php" );
 
-    $wgSearchBloxOrganizationName = "Example Inc."; #Name of the organization
+    $wgSearchBloxOrganizationName = "Example Inc."; #Name of the organization running the SearchBlox server
 
     $wgSearchBloxOrganizationWebsite = "http://example.com"; #URL of the orgnization's main website
 
