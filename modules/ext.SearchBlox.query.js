@@ -42,7 +42,7 @@
       var bold_keyword = "<b>"+keyword+"</b>";
       var organization_link = "<a href=\""+organization_site+"\">"+organization_name+"</a>";
       
-      var query_url = search_servlet_url+"?query="+keyword+"&xsl=xml";
+      var query_url = search_servlet_url+"?query="+escape(keyword)+"&xsl=xml";
       var xhr = query.createCORSRequest('GET', query_url);
       if (xhr){
           var message = document.getElementById("loading_message");
@@ -51,7 +51,7 @@
             var numResults = xmlDoc.getElementsByTagName("results")[0].getAttribute('hits');
             if (numResults != 0){
             
-              message.innerHTML = mw.message('searchblox-results', numResults, organization_link, bold_keyword, "<a href="+frontend_url+"?query="+keyword+">their search site</a>");
+              message.innerHTML = mw.message('searchblox-results', numResults, organization_link, bold_keyword, '<a href="'+frontend_url+'?query='+escape(keyword)+'">their search site</a>');
               
               var results=xmlDoc.getElementsByTagName("results")[0].childNodes;
               var ul = document.getElementById("results_list");
