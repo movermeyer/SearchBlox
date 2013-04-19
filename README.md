@@ -1,4 +1,4 @@
-SearchBlox
+SearchBlox Wikimedia Extension
 ==========
 
 A Mediawiki extension that queries a SearchBlox server when there < 10 matches for a query.
