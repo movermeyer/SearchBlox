@@ -62,23 +62,24 @@
                 var title = result.getElementsByTagName("title")[0].childNodes[0].nodeValue;
                 var size = result.getElementsByTagName("size")[0].childNodes[0].nodeValue;
                 var match = result.getElementsByTagName("context")[0];
+                var description = result.getElementsByTagName("description")[0].childNodes[0].nodeValue;
+                
                 var li = document.createElement("li");
                 
                 var li_header_div = document.createElement("div");
                 li_header_div.setAttribute("class", "mw-search-result-heading");
-                li_header_div.innerHTML = "<a href=\""+url+"\">"+title+"</a>";
+                li_header_div.innerHTML = "<a href=\""+unescape(url)+"\">"+title+"</a>";
                 li.appendChild(li_header_div);
                 
                 var li_match_div = document.createElement("div");
                 li_match_div.setAttribute("class", "searchresult");
-                li_match_div.innerHTML = query.createMatchString(match);
+                li_match_div.innerHTML = (typeof match != 'undefined') ? query.createMatchString(match) : description;
                 li.appendChild(li_match_div);
                 
                 var li_footer_div = document.createElement("div");
                 li_footer_div.setAttribute("class", "mw-search-result-data");
                 li_footer_div.innerHTML = query.formatSize(size)+" "+url;
                 li.appendChild(li_footer_div);
-                
                 
                 ul.appendChild(li);
               }
